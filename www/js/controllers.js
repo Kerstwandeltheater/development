@@ -52,6 +52,15 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('PieceCtrl', function($scope, $stateParams) {
+.controller('PieceCtrl', function($scope, $stateParams, $cordovaMedia) {
     $scope.piece = $stateParams.item;
+    
+//    $ionicPlatform.ready(function() {
+//        var media = $cordovaMedia.newMedia('www/pieces/piece_1.mp3');
+//
+//        $scope.play = function() {
+//            media.play();
+//        };
+//    });
+ 
 });
