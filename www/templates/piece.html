@@ -3,9 +3,14 @@
     <div class="innerContent">
         <h1>Stuk {{piece}}</h1>
         <p>Hier komt een stuk uitleg te staan over het werken van de pagina en wat er verwacht wordt van de gebruiker.</p>
-        <button class="button button-full button-assertive" ng-click="play()">
-            Nummer afspelen
-        </button>
+        <div style="float: left; width: 100%; display: block; ">
+            <button ng-if="buttonText" ng-class="{'button-full': !playing}" class="button button-assertive" style="float: left;" ng-click="play();">
+                {{buttonText}}
+            </button>
+            <button ng-if="playing" ng-class="{'ion-volume-mute': !muted, 'ion-volume-high': muted}" class="button button-assertive icon ion-volume-mute" style="float: right;" ng-click="mute();">
+
+            </button>
+        </div>
     </div>
   </ion-content>
 </ion-view>
