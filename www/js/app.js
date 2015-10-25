@@ -44,10 +44,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     
     .state('app.item', {
         url: '/piece/:item',
+        resolve: {
+            media: function($stateParams, $cordovaMedia) {
+//                if(ionic.platform.isIOS() || ionic.platform.isAndroid()) {
+//                    return $cordovaMedia.newMedia('/android_asset/www/pieces/piece_1.mp3');
+//                }
+                return false;
+            }
+        },
         views: {
             'menuContent': {
                 templateUrl: 'templates/piece.html',
                 controller: 'PieceCtrl'
+            }
+        },
+        onEnter: function(media){
+            if(media){
+                media.setVolume(0);
+                media.stop();
+            }
+        },
+        onExit: function(media){
+            if(media){
+                media.setVolume(0);
+                media.stop();
+                media.release();
             }
         }
     });

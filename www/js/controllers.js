@@ -41,51 +41,51 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PieceCtrl', function($scope, $stateParams, $cordovaMedia) {
+.controller('PieceCtrl', function($scope, $stateParams, media) {
     $scope.piece = $stateParams.item;
     
     ionic.Platform.ready(function() {
         $scope.buttonText = 'Nummer afslepen';
         $scope.playing = false;
         
-        var media   = $cordovaMedia.newMedia('/android_asset/www/pieces/piece_1.mp3'),
-            playing        = false,
+        var playing        = false,
             muted          = false;
             
         $scope.playing = playing;
         $scope.muted   = muted;
 
         $scope.play = function() {
+            
+            
             if(playing === false) {
-                media.play();
+                if(media) {
+                    media.play();
+                }
                 $scope.playing = playing = true;
                 $scope.buttonText = 'Nummer stoppen';
             }
             else {
-                media.stop();
+                if(media) {
+                    media.stop();
+                }
                 $scope.playing = playing = false;
                 $scope.buttonText = 'Nummer afslepen';
             }
         };
         
         $scope.mute = function() {
+            
             if(muted === false) {
-                media.setVolume(0);
+                
+                if(media) {
+                    media.setVolume(0);
+                }
                 $scope.muted = muted = true;
             }
             else {
-                media.setVolume(1);
+                if(media) {
+                    media.setVolume(1);
+                }
                 $scope.muted = muted = false;
             }
         };
