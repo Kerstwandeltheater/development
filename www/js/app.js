@@ -46,9 +46,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
         url: '/piece/:item',
         resolve: {
             media: function($stateParams, $cordovaMedia) {
-//                if(ionic.platform.isIOS() || ionic.platform.isAndroid()) {
-//                    return $cordovaMedia.newMedia('/android_asset/www/pieces/piece_1.mp3');
-//                }
+                if(ionic.platform.isIOS() || ionic.platform.isAndroid()) {
+                    return $cordovaMedia.newMedia('/android_asset/www/pieces/piece_1.mp3');
+                }
                 return false;
             }
         },

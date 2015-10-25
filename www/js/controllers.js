@@ -48,17 +48,17 @@ angular.module('starter.controllers', [])
         $scope.buttonText = 'Nummer afslepen';
         $scope.playing = false;
         
-        var playing        = false,
-            muted          = false;
+        var playing,
+            muted;
             
-        $scope.playing = playing;
-        $scope.muted   = muted;
+        $scope.playing = playing = false;
+        $scope.muted   = muted = false;
 
         $scope.play = function() {
             
-            
             if(playing === false) {
                 if(media) {
+                    media.setVolume(1);
                     media.play();
                 }
                 $scope.playing = playing = true;
