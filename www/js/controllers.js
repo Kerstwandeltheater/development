@@ -45,7 +45,7 @@ angular.module('starter.controllers', [])
     $scope.piece = $stateParams.item;
     
     ionic.Platform.ready(function() {
-        $scope.buttonText = 'Nummer afslepen';
+        $scope.buttonText = 'Nummer afspelen';
         $scope.playing = false;
         
         var playing,
@@ -57,7 +57,7 @@ angular.module('starter.controllers', [])
         $scope.play = function() {
             
             if(playing === false) {
-                if(media) {
+                if(media !== 'nope') {
                     media.setVolume(1);
                     media.play();
                 }
@@ -65,11 +65,11 @@ angular.module('starter.controllers', [])
                 $scope.buttonText = 'Nummer stoppen';
             }
             else {
-                if(media) {
+                if(media !== 'nope') {
                     media.stop();
                 }
                 $scope.playing = playing = false;
-                $scope.buttonText = 'Nummer afslepen';
+                $scope.buttonText = 'Nummer afspelen';
             }
         };
         
@@ -77,13 +77,13 @@ angular.module('starter.controllers', [])
             
             if(muted === false) {
                 
-                if(media) {
+                if(media !== 'nope') {
                     media.setVolume(0);
                 }
                 $scope.muted = muted = true;
             }
             else {
-                if(media) {
+                if(media !== 'nope') {
                     media.setVolume(1);
                 }
                 $scope.muted = muted = false;
