@@ -1,0 +1,57 @@
+<ion-view view-title="Kerstwandeltheater">
+  <ion-content>
+    <div class="innerContent">
+        <p>Let op: u verlaat Mesopotamië en treedt het Romeinse keizerrijk binnen. Is uw paspoort in orde?</p>
+        <div class="buttons">
+            <button ng-if="buttonText" 
+                    ng-class="{'button-full': !playing}" 
+                    class="button button-assertive playButton" 
+                    ng-click="play();">
+                
+                {{buttonText}}
+            </button>
+            <button ng-if="playing" 
+                    ng-class="{'ion-volume-mute': !muted, 'ion-volume-high': muted}"
+                    class="button button-assertive icon ion-volume-mute muteButton"
+                    ng-click="mute();">
+
+            </button>
+        </div>
+        <p> 
+            <br />
+            <i>Wij zingen het projectlied: </i> <br />
+            Wij verlaten huis en haard <br />
+            Koningsster, verlicht ons pad <br />
+            Woestijn, weide, berg en heide <br />
+            Dit kind is alles waard <br />
+            <br />
+            <i>Refrein:</i> <br />
+            Wonderbaarlijk beeldschoon licht <br />
+            Majesteitelijk gezicht <br />
+            Leid ons westwaarts naar de vindplaats <br />
+            Van de Prins die vrede sticht <br />
+            <br />
+            Goud, dat geef ik aan dit kind <br />
+            Van zijn kroon wordt dit het begin <br />
+            Eeuwig koning, zijn bekroning <br />
+            Luidt pas de vrede in <br />
+            <br />
+            <i>Refrein</i> <br />
+            <br />
+            Wierook past, wanneer hij regeert <br />
+            Juist door hem wordt God echt ge&euml;erd <br />
+            Puur genade zijn zijn daden <br />
+            Hij doet wat God begeert <br />
+            <br />
+            <i>Refrein</i> <br />
+            <br />
+            Mirre geef ik omdat zijn strijd <br />
+            Voor de vrede maakt dat hij lijdt <br />
+            Doodsgeur wist het, bitter is het <br />
+            Zoet is zijn vredesrijk <br />
+            <br />
+            <i>Refrein</i> <br />
+        </p>
+    </div>
+  </ion-content>
+</ion-view>

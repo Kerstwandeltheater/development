@@ -1,0 +1,23 @@
+<ion-view view-title="Kerstwandeltheater">
+  <ion-content>
+    <div class="innerContent">
+        <p>Zoals u al heeft kunnen merken, zijn de grenscontroles bij het Romeinse keizerrijk afgeschaft. In plaats daarvan kunt u nu overal om uw paspoort worden gevraagd. Bereid u voor!</p>
+        <div class="buttons groepsleiderContent">
+            <button ng-if="buttonText" 
+                    ng-class="{'button-full': !playing}" 
+                    class="button button-assertive playButton" 
+                    ng-click="play();">
+                
+                {{buttonText}}
+            </button>
+            <button ng-if="playing" 
+                    ng-class="{'ion-volume-mute': !muted, 'ion-volume-high': muted}"
+                    class="button button-assertive icon ion-volume-mute muteButton"
+                    ng-click="mute();">
+
+            </button>
+        </div>
+       
+    </div>
+  </ion-content>
+</ion-view>

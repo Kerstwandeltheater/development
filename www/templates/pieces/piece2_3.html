@@ -1,0 +1,73 @@
+<ion-view view-title="Kerstwandeltheater">
+  <ion-content>
+    <div class="innerContent">
+        <p>U treedt nu het dorp – of eigenlijk gehucht – Nazaret binnen. Zoek daar naar een timmerman. Dat kan niet moeilijk zijn.</p>
+        
+        <div class="buttons groepsleiderContent">
+            <button ng-if="buttonText" 
+                    ng-class="{'button-full': !playing}" 
+                    class="button button-assertive playButton" 
+                    ng-click="play();">
+                
+                {{buttonText}}
+            </button>
+            <button ng-if="playing" 
+                    ng-class="{'ion-volume-mute': !muted, 'ion-volume-high': muted}"
+                    class="button button-assertive icon ion-volume-mute muteButton"
+                    ng-click="mute();">
+
+            </button>
+        </div>
+        <p>
+            When I find myself in times of trouble <br />
+            Mother Mary comes to me <br />
+            Speaking words of wisdom, let it be <br />
+            And in my hour of darkness <br />
+            She is standing right in front of me <br />
+            Speaking words of wisdom, let it be <br />
+            <br />
+            
+            Let it be, let it be <br />
+            Let it be, let it be <br />
+            Whisper words of wisdom, let it be <br />
+            <br />
+            
+            And when the broken-hearted people <br />
+            Living in the world agree <br />
+            There will be an answer, let it be <br />
+            For though they may be parted <br />
+            There is still a chance that they will see <br />
+            There will be an answer, let it be <br />
+            <br />
+            
+            Let it be, let it be <br />
+            Let it be, let it be <br />
+            Yeah, there will be an answer, let it be <br />
+            Let it be, let it be <br />
+            Let it be, let it be <br />
+            Whisper words of wisdom, let it be <br />
+            <br />
+            
+            Let it be, let it be <br />
+            Ah, let it be, yeah, let it be <br />
+            Whisper words of wisdom, let it be <br />
+            <br />
+            
+            And when the night is cloudy <br />
+            There is still a light that shines on me <br />
+            Shine on until tomorrow, let it be <br />
+            I wake up to the sound of music, <br />
+            Mother Mary comes to me <br />
+            Speaking words of wisdom, let it be <br />
+            <br />
+            
+            Let it be, let it be <br />
+            Let it be, yeah, let it be <br />
+            Oh, there will be an answer, let it be <br />
+            Let it be, let it be <br />
+            Let it be, yeah, let it be <br />
+            Whisper words of wisdom, let it be <br />
+        </p>
+    </div>
+  </ion-content>
+</ion-view>

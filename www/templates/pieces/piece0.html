@@ -1,0 +1,23 @@
+<ion-view view-title="Kerstwandeltheater">
+  <ion-content>
+    <div class="innerContent">
+        <p>Hoor de profeet! Al leefde hij 700 jaar geleden, hij heeft een boodschap voor u!</p>
+        <div class="buttons">
+            <button ng-if="buttonText" 
+                    ng-class="{'button-full': !playing}" 
+                    class="button button-assertive playButton" 
+                    ng-click="play();">
+                
+                {{buttonText}}
+            </button>
+            <button ng-if="playing" 
+                    ng-class="{'ion-volume-mute': !muted, 'ion-volume-high': muted}"
+                    class="button button-assertive icon ion-volume-mute muteButton"
+                    ng-click="mute();">
+
+            </button>
+        </div>
+       
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,9 +1,3 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
 .run(function($ionicPlatform) {
@@ -13,10 +7,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
     if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
   });
@@ -47,7 +39,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
         resolve: {
             media: function($stateParams, $cordovaMedia) {
                 if(ionic.Platform.isIOS() || ionic.Platform.isAndroid()) {
-//                    return $cordovaMedia.newMedia('/android_asset/www/pieces/piece_1.mp3');
+                    
+                    var path = (ionic.Platform.isAndroid()) ? '/android_asset/www/' : '';
+//                        path += 'pieces/piece_' + $stateParams.item  + '.mp3';
+                        path += 'pieces/piece_1.mp3'
+                    return $cordovaMedia.newMedia(path);
                 }
                 return 'nope';
             }

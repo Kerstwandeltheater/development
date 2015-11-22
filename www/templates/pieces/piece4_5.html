@@ -1,0 +1,27 @@
+<ion-view view-title="Kerstwandeltheater">
+  <ion-content>
+    <div class="innerContent">
+        <p>Pas op, in Jeruzalem is het heel druk. En ze rijden daar als gekken!</p>
+        <div class="buttons">
+            <button ng-if="buttonText" 
+                    ng-class="{'button-full': !playing}" 
+                    class="button button-assertive playButton" 
+                    ng-click="play();">
+                
+                {{buttonText}}
+            </button>
+            <button ng-if="playing" 
+                    ng-class="{'ion-volume-mute': !muted, 'ion-volume-high': muted}"
+                    class="button button-assertive icon ion-volume-mute muteButton"
+                    ng-click="mute();">
+
+            </button>
+        </div>
+        <p class="groepsleiderContent">
+            <i>
+                Zorg dat iedereen zijn app op het traject van 4 naar 5  instelt, en dat iedereen op de START knop drukt. Dat hoeft deze keer niet tegelijk.
+            </i>
+        </p>
+    </div>
+  </ion-content>
+</ion-view>
