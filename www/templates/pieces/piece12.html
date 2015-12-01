@@ -1,16 +1,22 @@
 <ion-view view-title="Kerstwandeltheater">
   <ion-content>
     <div class="innerContent">
-        <p>Hier komt een stuk uitleg te staan over het werken van de pagina en wat er verwacht wordt van de gebruiker.</p>
-        <div style="float: left; width: 100%; display: block; ">
-            <button ng-if="buttonText" ng-class="{'button-full': !playing}" class="button button-assertive" style="float: left;" ng-click="play();">
-                {{buttonText}}
-            </button>
-            <button ng-if="playing" ng-class="{'ion-volume-mute': !muted, 'ion-volume-high': muted}" class="button button-assertive icon ion-volume-mute" style="float: right;" ng-click="mute();">
-
-            </button>
-        </div>
-       
+        <p>U bent er! Gefeliciteerd! Voor u is de stal, met Maria, Jozef, het kerstkindje en de dieren. Boven u is de ster. Kijk uw ogen uit, en ga dan de kerk in voor een welverdiend drankje.</p>
     </div>
+        <div class="visual">
+            <img src="img/visuals/12 kribbe.jpg" alt="Kribbe" />
+        </div>
   </ion-content>
+    <ion-tabs class="tabs-assertive tabs-icon-only">
+        
+        <ion-tab title="Vorige"  nav-direction="back"ng-click="previous();" icon="ion-chevron-left">
+        </ion-tab>
+
+        <ion-tab title="Home" ui-sref="app.home" icon="ion-home">
+        </ion-tab>
+
+        <ion-tab title="Volgende"  nav-direction="forward"ng-click="next();" icon="ion-chevron-right">
+        </ion-tab>
+        
+    </ion-tabs>
 </ion-view>

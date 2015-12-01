@@ -4,4 +4,16 @@
         <p>Waarom zou Herodes hebben gezorgd dat u ongehinderd door het bergland van Judea kon reizen? Heeft hij alles onder controle?</p>
     </div>
   </ion-content>
+    <ion-tabs class="tabs-assertive tabs-icon-only">
+        
+        <ion-tab title="Vorige"  nav-direction="back"ng-click="previous();" icon="ion-chevron-left">
+        </ion-tab>
+
+        <ion-tab title="Home" ui-sref="app.home" icon="ion-home">
+        </ion-tab>
+
+        <ion-tab title="Volgende"  nav-direction="forward"ng-click="next();" icon="ion-chevron-right">
+        </ion-tab>
+        
+    </ion-tabs>
 </ion-view>

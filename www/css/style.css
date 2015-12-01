@@ -1,7 +1,9 @@
-.groepsleiderContent {
+.ionic-scroll .groepsleiderContent,
+.ionic-scroll .buttons.groepsleiderContent{
     display: none;
 }
-.groepsleider .groepsleiderContent {
+.groepsleider .ionic-scroll  .groepsleiderContent,
+.groepsleider .ionic-scroll .buttons.groepsleiderContent {
     display: block;
 }
 
@@ -48,3 +50,21 @@ h1, h2, h3, h4, h5, h6, span, p {
     color: #fff;
 }
 
+.visual {
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+}
+.visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+@media screen and (max-width: 850px) {
+    .visual img {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0 20px;
+    }
+}

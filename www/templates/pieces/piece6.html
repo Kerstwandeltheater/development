@@ -3,5 +3,20 @@
     <div class="innerContent">
         <p>In de TV studio vindt een discussie tussen experts plaats: Waar zal de koning van de Joden geboren moeten worden? Welke expert vindt u het meest overtuigend?</p>     
     </div>
+    <div class="visual">
+        <img src="img/visuals/5 kroon.jpg" alt="Kroon" />
+    </div>
   </ion-content>
+    <ion-tabs class="tabs-assertive tabs-icon-only">
+        
+        <ion-tab title="Vorige"  nav-direction="back"ng-click="previous();" icon="ion-chevron-left">
+        </ion-tab>
+
+        <ion-tab title="Home" ui-sref="app.home" icon="ion-home">
+        </ion-tab>
+
+        <ion-tab title="Volgende"  nav-direction="forward"ng-click="next();" icon="ion-chevron-right">
+        </ion-tab>
+        
+    </ion-tabs>
 </ion-view>

@@ -41,8 +41,9 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PieceCtrl', function($scope, $stateParams, media) {
+.controller('PieceCtrl', function($scope, $stateParams, media, $state, $ionicHistory) {
     $scope.piece = $stateParams.item;
+    $scope.currentPage = currentPage;
     
     ionic.Platform.ready(function() {
         $scope.buttonText = 'Nummer afspelen';
@@ -88,6 +89,36 @@ angular.module('starter.controllers', [])
                 }
                 $scope.muted = muted = false;
             }
+        };
+        
+        $scope.previous = function() {
+            var previous = currentPage - 1;
+            
+            if( previous < 0) {
+                $ionicHistory.clearHistory();
+                
+                $state.go('app.home');
+                return;
+            }
+            
+            currentPage = previous;
+            
+            $state.go('app.item', {item: pages[previous]});
+        };
+        
+        $scope.next = function() {
+            var next = currentPage + 1;
+            
+            if( next >= pages.length) {
+                $ionicHistory.clearHistory();
+                
+                $state.go('app.home');
+                return;
+            }
+            
+            currentPage = next;
+            
+            $state.go('app.item', {item: pages[next]});
         };
     });
  

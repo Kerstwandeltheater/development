@@ -1,8 +1,22 @@
-<ion-view view-title="Stuk {{piece}}">
+<ion-view view-title="Kerstwandeltheater">
   <ion-content>
     <div class="innerContent">
-        <h1>Stuk {{piece}}</h1>&eacute;
         <p>Jeruzalem, de nummer &eacute;&eacute;n toeristenbestemming uit de oudheid. Wie weken, zo niet maanden onderweg is om de stad te bereiken, heeft er vast wat geld voor over om een tastbaar bewijs van zijn bezoek te kopen. Is er iets van uw gading bij? </p>
     </div>
+    <div class="visual">
+        <img src="img/visuals/3 timmeren.jpg" alt="Timmeren" />
+    </div>
   </ion-content>
+    <ion-tabs class="tabs-assertive tabs-icon-only">
+        
+        <ion-tab title="Vorige"  nav-direction="back"ng-click="previous();" icon="ion-chevron-left">
+        </ion-tab>
+
+        <ion-tab title="Home" ui-sref="app.home" icon="ion-home">
+        </ion-tab>
+
+        <ion-tab title="Volgende"  nav-direction="forward"ng-click="next();" icon="ion-chevron-right">
+        </ion-tab>
+        
+    </ion-tabs>
 </ion-view>

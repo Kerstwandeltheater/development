@@ -1,17 +1,42 @@
-<ion-view view-title="Stuk {{piece}}">
+<ion-view view-title="Kerstwandeltheater">
   <ion-content>
     <div class="innerContent">
-        <h1>Stuk {{piece}}</h1>
-        <p>Hier komt een stuk uitleg te staan over het werken van de pagina en wat er verwacht wordt van de gebruiker.</p>
-        <div style="float: left; width: 100%; display: block; ">
-            <button ng-if="buttonText" ng-class="{'button-full': !playing}" class="button button-assertive" style="float: left;" ng-click="play();">
+        <p>Het is een verhaal zo oud als de weg naar Kralingen: wanneer de vaders iets belangrijkers te doen hebben, moeten de kinderen in hun plaats werken. Maar zitten de kinderen daarmee? En lust u misschien een marshmallow?</p>
+        <div class="buttons">
+            <button ng-if="buttonText" 
+                    ng-class="{'button-full': !playing}" 
+                    class="button button-assertive playButton" 
+                    ng-click="play();">
+                
                 {{buttonText}}
             </button>
-            <button ng-if="playing" ng-class="{'ion-volume-mute': !muted, 'ion-volume-high': muted}" class="button button-assertive icon ion-volume-mute" style="float: right;" ng-click="mute();">
+            <button ng-if="playing" 
+                    ng-class="{'ion-volume-mute': !muted, 'ion-volume-high': muted}"
+                    class="button button-assertive icon ion-volume-mute muteButton"
+                    ng-click="mute();">
 
             </button>
         </div>
-       
+       <p class="groepsleiderContent">
+           <i>
+               Zorg dat iedereen zijn app op scene 8 instelt, en dat iedereen tegelijk op de START knop drukt. 
+           </i>
+        </p>
+        <div class="visual">
+            <img src="img/visuals/9 slapende schaapje.jpg" alt="Slapende schaapje" />
+        </div>
     </div>
   </ion-content>
+    <ion-tabs class="tabs-assertive tabs-icon-only">
+        
+        <ion-tab title="Vorige"  nav-direction="back"ng-click="previous();" icon="ion-chevron-left">
+        </ion-tab>
+
+        <ion-tab title="Home" ui-sref="app.home" icon="ion-home">
+        </ion-tab>
+
+        <ion-tab title="Volgende"  nav-direction="forward"ng-click="next();" icon="ion-chevron-right">
+        </ion-tab>
+        
+    </ion-tabs>
 </ion-view>

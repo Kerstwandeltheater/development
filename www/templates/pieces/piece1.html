@@ -3,5 +3,20 @@
     <div class="innerContent">
         <p>In het oude Mesopotami&euml; staan sterrenkundigen hoog in aanzien. En de oude Eli&euml;zer is onbetwist de grootste sterrenkundige die bestaat. Wat heeft hij te melden?</p>
     </div>
+    <div class="visual">
+        <img src="img/visuals/1 ster.jpg" alt="ster" />
+    </div>
   </ion-content>
+    <ion-tabs class="tabs-assertive tabs-icon-only">
+        
+        <ion-tab title="Vorige"  nav-direction="back"ng-click="previous();" icon="ion-chevron-left">
+        </ion-tab>
+
+        <ion-tab title="Home" ui-sref="app.home" icon="ion-home">
+        </ion-tab>
+
+        <ion-tab title="Volgende"  nav-direction="forward"ng-click="next();" icon="ion-chevron-right">
+        </ion-tab>
+        
+    </ion-tabs>
 </ion-view>

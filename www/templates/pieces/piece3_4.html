@@ -4,4 +4,16 @@
         <p>U verlaat Nazaret en gaat op weg naar Jeruzalem, toen al een grote stad. Zingt u met de pelgrims mee: "Jeruzalem dat ik bemin, wij treden uwe poorten in"?</p>
     </div>
   </ion-content>
+    <ion-tabs class="tabs-assertive tabs-icon-only">
+        
+        <ion-tab title="Vorige"  nav-direction="back"ng-click="previous();" icon="ion-chevron-left">
+        </ion-tab>
+
+        <ion-tab title="Home" ui-sref="app.home" icon="ion-home">
+        </ion-tab>
+
+        <ion-tab title="Volgende"  nav-direction="forward"ng-click="next();" icon="ion-chevron-right">
+        </ion-tab>
+        
+    </ion-tabs>
 </ion-view>

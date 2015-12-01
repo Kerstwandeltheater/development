@@ -3,5 +3,20 @@
     <div class="innerContent">
         <p>Op het platteland gebeuren wonderen, want hoe minder getuigen er zijn, hoe groter de wonderen. Of is deze avond anders dan alle andere avonden?</p>
     </div>
+    <div class="visual">
+        <img src="img/visuals/8 engeltje.jpg" alt="Engeltje" />
+    </div>
   </ion-content>
+    <ion-tabs class="tabs-assertive tabs-icon-only">
+        
+        <ion-tab title="Vorige"  nav-direction="back"ng-click="previous();" icon="ion-chevron-left">
+        </ion-tab>
+
+        <ion-tab title="Home" ui-sref="app.home" icon="ion-home">
+        </ion-tab>
+
+        <ion-tab title="Volgende"  nav-direction="forward"ng-click="next();" icon="ion-chevron-right">
+        </ion-tab>
+        
+    </ion-tabs>
 </ion-view>

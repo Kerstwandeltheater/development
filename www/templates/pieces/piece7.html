@@ -3,5 +3,20 @@
     <div class="innerContent">
         <p>Regel 1 voor als u door een Romeinse patrouille wordt aangehouden: Volg de instructies op. Misschien heeft de decurion een goede bui.</p>
     </div>
+    <div class="visual">
+        <img src="img/visuals/6 studio.jpg" alt="Studio" />
+    </div>
   </ion-content>
+    <ion-tabs class="tabs-assertive tabs-icon-only">
+        
+        <ion-tab title="Vorige"  nav-direction="back"ng-click="previous();" icon="ion-chevron-left">
+        </ion-tab>
+
+        <ion-tab title="Home" ui-sref="app.home" icon="ion-home">
+        </ion-tab>
+
+        <ion-tab title="Volgende"  nav-direction="forward"ng-click="next();" icon="ion-chevron-right">
+        </ion-tab>
+        
+    </ion-tabs>
 </ion-view>

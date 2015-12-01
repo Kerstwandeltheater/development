@@ -1,17 +1,37 @@
-<ion-view view-title="Stuk {{piece}}">
-  <ion-content>
-    <div class="innerContent">
-        <h1>Stuk {{piece}}</h1>
-        <p>Hier komt een stuk uitleg te staan over het werken van de pagina en wat er verwacht wordt van de gebruiker.</p>
-        <div style="float: left; width: 100%; display: block; ">
-            <button ng-if="buttonText" ng-class="{'button-full': !playing}" class="button button-assertive" style="float: left;" ng-click="play();">
-                {{buttonText}}
-            </button>
-            <button ng-if="playing" ng-class="{'ion-volume-mute': !muted, 'ion-volume-high': muted}" class="button button-assertive icon ion-volume-mute" style="float: right;" ng-click="mute();">
-
-            </button>
+<ion-view view-title="Kerstwandeltheater">
+    <ion-content>
+        <div class="innerContent">
+            <p>Een herberg zonder ruimte, waar men u liever kwijt dan rijk is. Dat kan wel gezellig klinken, maar niet voor u.</p>
+            <p class="groepsleiderContent">
+                <i>Wanneer de herbergier een vraag aan de groep stelt, neemt u het woord. Uw woorden zijn <b>vet</b> gedrukt.</i><br />
+                <i>Herbergier: Salaam, dames en heren</i><br />
+                <b>Goedenavond</b><br />
+                <i>Herbergier: Het spijt me zeer, wij zijn vol! U kunt niet door het hek.</i><br />
+                <b>Het geeft niet, wij komen niet voor u of uw herberg.</b><br />
+                <i>Herbergier: Wat komen jullie dan hier doen?</i><br />
+                <b>Wij zoeken de koning van de Joden. Wij hebben zijn ster gevolgd. Hij moet hier ergens in Bethlehem zijn geboren. Kunt u ons vertellen waar wij hem kunnen vinden?</b><br />
+                <i>Herbergier: Barney, jij ben van de afdeling toeristeninformatie.</i><br />
+                <i>Herbergier 2: Pasgeboren kind? Dan moet u bij de stal zijn, iets verder die kant op. Wijst in de goede richting.</i><br />
+                <b>Dank u wel!</b><br />
+                <i>Herbergier: (Houdt zijn hand op). Onze fooi, graag!</i><br />
+                <br />
+                <b>Mensen, wij gaan door naar de stal. Hier hebben wij niets te zoeken.</b><br />
+            </p>
         </div>
-       
-    </div>
-  </ion-content>
+        <div class="visual">
+            <img src="img/visuals/11 herberg.jpg" alt="Herberg" />
+        </div>
+   </ion-content>
+    <ion-tabs class="tabs-assertive tabs-icon-only">
+        
+        <ion-tab title="Vorige"  nav-direction="back"ng-click="previous();" icon="ion-chevron-left">
+        </ion-tab>
+
+        <ion-tab title="Home" ui-sref="app.home" icon="ion-home">
+        </ion-tab>
+
+        <ion-tab title="Volgende"  nav-direction="forward"ng-click="next();" icon="ion-chevron-right">
+        </ion-tab>
+        
+    </ion-tabs>
 </ion-view>

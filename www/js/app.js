@@ -1,5 +1,7 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
-
+.config(function($ionicConfigProvider) {
+    $ionicConfigProvider.tabs.position('bottom');
+})
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -51,6 +53,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
         views: {
             'menuContent': {
                 templateUrl: function ($stateParams){
+                    currentPage = pages.indexOf($stateParams.item);
                     return 'templates/pieces/piece' + $stateParams.item + '.html';
                 },
                 controller: 'PieceCtrl'
