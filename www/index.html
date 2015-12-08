@@ -36,11 +36,24 @@
                 '10',
                 '10_11',
                 '11',
-                '11_12'];
+                '11_12'],
+            songs = {
+                '0'   : 'countdown.mp3',
+                '1_2' : 'projectlied.mp3',
+                '2_3' : 'let_it_be.mp3',
+                '4_5' : 'trafic.mp3',
+                '6'   : 'wereld_draait_door.mp3',
+                '6_7' : '',
+                '8_9' : 'no_business.mp3',
+                '9'   : 'mekkeren.mp3'
+            },
+            timesClicked = 0;
+    
+            
     </script>
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="lib/ionic/js/ng-cordova.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -50,7 +63,7 @@
     <script src="js/controllers.js"></script>
   </head>
 
-  <body ng-app="starter">
+  <body ng-app="starter" id="body">
     <ion-nav-view></ion-nav-view>
   </body>
 </html>

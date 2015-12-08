@@ -32,7 +32,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
             'menuContent': {
                 templateUrl: 'templates/home.html'
             }
-        }
+        },
+        controller: 'AppCtrl'
     })
     
     
@@ -40,12 +41,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
         url: '/piece/:item',
         resolve: {
             media: function($stateParams, $cordovaMedia) {
+                
                 if(ionic.Platform.isIOS() || ionic.Platform.isAndroid()) {
                     
-                    var path = (ionic.Platform.isAndroid()) ? '/android_asset/www/' : '';
-//                        path += 'pieces/piece_' + $stateParams.item  + '.mp3';
-                        path += 'pieces/piece_1.mp3'
-                    return $cordovaMedia.newMedia(path);
+                    if(typeof songs[$stateParams.item] !== 'undefined'
+                        && songs[$stateParams.item].length > 0) {
+                    
+                        var path = (ionic.Platform.isAndroid()) ? '/android_asset/www/' : '';
+                            path += 'pieces/' + songs[$stateParams.item];
+                            
+                        return $cordovaMedia.newMedia(path);
+                    }
                 }
                 return 'nope';
             }

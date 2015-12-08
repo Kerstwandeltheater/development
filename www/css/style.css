@@ -6,7 +6,13 @@
 .groepsleider .ionic-scroll .buttons.groepsleiderContent {
     display: block;
 }
-
+.groepsleiderContent {
+    
+    border: 2px solid #e42012;
+    float: left;
+    width: 100%;
+    padding: 20px;
+}
 .view,
 .pane {
 }
@@ -33,6 +39,7 @@
     float: left;
     width: 100%; 
     display: block; 
+    margin: 24px 0; 
 }
 .innerContent .buttons .button {
     
