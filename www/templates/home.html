@@ -1,8 +1,25 @@
 <ion-view view-title="Kerstwandeltheater">
-  <ion-content>
-    <div class="innerContent">
-        <h1 ng-click="add()">Welkom!</h1>
-        <p>Welkom bij de app van het kerstwandeltheater.</p>
-    </div>
-  </ion-content>
+    <ion-content>
+        <div class="innerContent">
+            <h1 ng-click="add()">Welkom!</h1>
+            <p>
+                Welkom bij de allereerste versie van de app van het kerstwandeltheater. De app is een aanvulling op 
+                wat bij de verschillende scenes te zien en horen valt. Het is bedoeld om uw beleving van het 
+                kerstwandeltheater completer te maken, met tekst en met geluid.<br />
+                <br />
+                Het geluid werkt beter als iedereen in de groep het tegelijkertijd afspeelt. Uw groepsleider zal 
+                aangeven wanneer dat moet gebeuren.<br /><br />
+                Ga naar de proloog, door op de pijl vooruit te drukken.
+            </p>
+            <div class="visual">
+                <img src="img/visuals/home logo.png" alt="Marktkraam" />
+            </div>
+        </div>
+    </ion-content>
+    <ion-tabs class="tabs-assertive tabs-icon-only">
+        
+        <ion-tab title="Beginnen"  nav-direction="forward" ng-click="start()" icon="ion-chevron-right">
+        </ion-tab>
+        
+    </ion-tabs>
 </ion-view>

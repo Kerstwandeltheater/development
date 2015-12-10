@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $state) {
     
     $scope.add = function(){
         if(window.timesClicked >= 7) {
@@ -13,6 +13,10 @@ angular.module('starter.controllers', [])
            body.classList.add('groepsleider');
        }
     }
+    
+    $scope.start = function() {
+        $state.go('app.item', {item: 0});
+    };
 })
 
 .controller('PieceCtrl', function($scope, $stateParams, media, $state, $ionicHistory, $timeout) {
