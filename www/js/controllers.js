@@ -19,26 +19,68 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('PieceCtrl', function($scope, $stateParams, media, $state, $ionicHistory, $timeout) {
+.controller('PieceCtrl', function($scope, $stateParams, $state, $ionicHistory, $timeout, $ionicPlatform, $cordovaMedia) {
+    
     $scope.piece = $stateParams.item;
     $scope.currentPage = currentPage;
     
     ionic.Platform.ready(function() {
-        $scope.buttonText = 'Nummer afspelen';
-        $scope.playing = false;
         
-        var playing,
-            muted,
-            delayedplay;
-            
+        var media          = 'nope',
+            playing        =  false,
+            muted          = false,
+            delayedPlaying = false;
+        
         $scope.playing = playing = false;
         $scope.muted   = muted = false;
+        
+        $scope.buttonText = 'Nummer afspelen';
+        
+        $scope.$on('$ionicView.beforeEnter', function() {
+            if(ionic.Platform.isIOS() || ionic.Platform.isAndroid()) {
 
+                if(typeof songs[$stateParams.item] !== 'undefined'
+                    && songs[$stateParams.item].length > 0) {
+
+                    var path = (ionic.Platform.isAndroid()) ? '/android_asset/www/' : '';
+                        path += 'pieces/' + songs[$stateParams.item];
+
+                    media = $cordovaMedia.newMedia(path);
+                }
+            }
+
+            if(media !== 'nope') {
+                media.setVolume(0);
+            }
+            
+            $scope.playing = playing = false;
+            $scope.muted   = muted = false;
+            $scope.buttonText = 'Nummer afspelen';
+        });
+        
+        $ionicPlatform.on('pause', function() {
+            if(media !== 'nope') {
+                media.stop();
+            }
+            $scope.playing = playing = false;
+            $scope.buttonText = 'Nummer afspelen';
+        });
+        
+        $scope.$on('$ionicView.beforeLeave', function() {
+            if(media !== 'nope') {
+                media.stop();
+                media.release();
+            }
+            $scope.playing = playing = false;
+            $scope.buttonText = 'Nummer afspelen';
+        });
+        
         $scope.delayedPlay = function() {
-            if(delayedPlay === true) {
+            
+            if(delayedPlaying === true) {
                 return;
             }
-            delayedplay = true;
+            delayedPlaying = true;
             
             if(media !== 'nope') {
                 
@@ -52,23 +94,29 @@ angular.module('starter.controllers', [])
             $scope.buttonText = 'Moment geduld a.u.b.';
         };
         
-        $scope.play = function() {
+        $scope.play = function(force) {
             
-            if(playing === false) {
-                if(media !== 'nope') {
-                    media.setVolume(1);
-                    media.play();
-                }
-                $scope.playing = playing = true;
-                $scope.buttonText = 'Nummer stoppen';
-            }
-            else {
+            if(playing === true || (typeof force !== 'undefined' && force === true)) {
                 if(media !== 'nope') {
                     media.stop();
+                    
+                    if(typeof force !== 'undefined' && force === true) {
+                        media.release();
+                    }
                 }
+                
                 $scope.playing = playing = false;
                 $scope.buttonText = 'Nummer afspelen';
+                
+                return true;
             }
+            
+            if(media !== 'nope') {
+                media.setVolume(1);
+                media.play();
+            }
+            $scope.playing = playing = true;
+            $scope.buttonText = 'Nummer stoppen';
         };
         
         $scope.mute = function() {
@@ -79,17 +127,20 @@ angular.module('starter.controllers', [])
                     media.setVolume(0);
                 }
                 $scope.muted = muted = true;
+                
+                return true;
             }
-            else {
-                if(media !== 'nope') {
-                    media.setVolume(1);
-                }
-                $scope.muted = muted = false;
+            
+            if(media !== 'nope') {
+                media.setVolume(1);
             }
+            $scope.muted = muted = false;
         };
         
         $scope.previous = function() {
             var previous = currentPage - 1;
+            
+            $scope.play(true);
             
             if( previous < 0) {
                 $ionicHistory.clearHistory();
@@ -105,6 +156,8 @@ angular.module('starter.controllers', [])
         
         $scope.next = function() {
             var next = currentPage + 1;
+            
+            $scope.play(true);
             
             if( next >= pages.length) {
                 $ionicHistory.clearHistory();
